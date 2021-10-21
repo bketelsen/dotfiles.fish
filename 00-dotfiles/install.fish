@@ -1,12 +1,12 @@
 #!/usr/bin/env fish
-set -Ux EDITOR vim
+set -Ux EDITOR nvim
 set -Ux VISUAL $EDITOR
 set -Ux WEDITOR code
 
 set -Ux DOTFILES ~/.dotfiles
-set -Ux PROJECTS ~/Developer
+set -Ux PROJECTS ~/src
 
-set -Ua fish_user_paths $DOTFILES/bin $HOME/.bin
+set -Ua fish_user_paths $DOTFILES/bin $HOME/.bin $HOME/bin
 
 for f in $DOTFILES/*/functions
 	set -Up fish_function_path $f

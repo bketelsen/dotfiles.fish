@@ -54,6 +54,12 @@ disabled = true
 [helm]
 disabled = true
 
+[hostname]
+ssh_only = false
+format =  "[$hostname](bold red) "
+trim_at = ".companyname.com"
+disabled = false
+
 [java]
 disabled = true
 
@@ -131,3 +137,4 @@ disabled = true
 
 [username]
 format = "[$user]($style)@"
+show_always = true
