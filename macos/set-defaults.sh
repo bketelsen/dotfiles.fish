@@ -84,21 +84,21 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 echo "  › Disable the 'Are you sure you want to open this application?' dialog"
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-echo "  › Set dark interface style"
-defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+#echo "  › Set dark interface style"
+#defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 
-echo "  › Set graphite appearance"
-defaults write NSGlobalDomain AppleAquaColorVariant -int 6
+#echo "  › Set graphite appearance"
+#defaults write NSGlobalDomain AppleAquaColorVariant -int 6
 
-echo "  › Set graphite highlight color"
-defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745"
+#echo "  › Set graphite highlight color"
+#defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745"
 
 echo "  › Show battery percent"
 defaults write com.apple.menuextra.battery ShowPercent -bool true
 
 echo "  › Speed up wake from sleep to 24 hours from an hour"
 # http://www.cultofmac.com/221392/quick-hack-speeds-up-retina-macbooks-wake-from-sleep-os-x-tips/
-sudo pmset -a standbydelay 86400
+#sudo pmset -a standbydelay 86400
 
 echo "  › Removing duplicates in the 'Open With' menu"
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister \
@@ -112,8 +112,8 @@ echo "  › Always open everything in Finder's list view"
 defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 
 echo "  › Set the Finder prefs for showing a few different volumes on the Desktop"
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
 echo "  › Expand save panel by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -165,10 +165,10 @@ defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 
 #############################
 
-echo ""
-echo "› Dock"
-echo "  › Setting the icon size of Dock items to 45 pixels for optimal size/screen-realestate"
-defaults write com.apple.dock tilesize -int 45
+#echo ""
+#echo "› Dock"
+#echo "  › Setting the icon size of Dock items to 45 pixels for optimal size/screen-realestate"
+#defaults write com.apple.dock tilesize -int 45
 
 echo "  › Speeding up Mission Control animations and grouping windows by application"
 defaults write com.apple.dock expose-animation-duration -float 0.1
@@ -187,69 +187,6 @@ defaults write com.apple.dock launchanim -bool false
 
 #############################
 
-echo ""
-echo "› Transmission:"
-echo "  › Use ~/Downloads/Incomplete to store incomplete downloads"
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "$HOME/Downloads/Incomplete"
-
-echo "  › Don't prompt for confirmation before downloading"
-defaults write org.m0k.transmission DownloadAsk -bool false
-
-echo "  › Trash original torrent files"
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-
-echo "  › Hide the donate message"
-defaults write org.m0k.transmission WarningDonate -bool false
-
-echo "  › Hide the legal disclaimer"
-defaults write org.m0k.transmission WarningLegal -bool false
-
-echo "  › Auto-add .torrent files in ~/Downloads"
-defaults write org.m0k.transmission AutoImportDirectory -string "$HOME/Downloads"
-
-echo "  › Auto-resize the window to fit transfers"
-defaults write org.m0k.transmission AutoSize -bool true
-
-echo "  › Auto update to betas"
-defaults write org.m0k.transmission AutoUpdateBeta -bool true
-
-echo "  › Set up the best block list"
-defaults write org.m0k.transmission EncryptionRequire -bool true
-defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
-defaults write org.m0k.transmission BlocklistNew -bool true
-defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
-
-#############################
-
-echo ""
-echo "› Mail:"
-echo "  › Add the keyboard shortcut CMD + Enter to send an email"
-defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" "@\U21a9"
-echo "  › Add the keyboard shortcut CMD + Shift + E to archive an email"
-# shellcheck disable=SC2016
-defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Archive" '@$e'
-
-echo "  › Disable smart quotes as it's annoying for messages that contain code"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
-
-echo "  › Set email addresses to copy as 'foo@example.com' instead of 'Foo Bar <foo@example.com>'"
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-
-echo "  › Display emails in threaded mode, sorted by date (oldest at the top)"
-defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
-defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
-defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
-
-echo "  › Disable inline attachments (just show the icons)"
-defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
-
-echo "  › Disable automatic spell checking"
-defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
-
-echo "  ›  Disable send and reply animations in Mail.app"
-defaults write com.apple.mail DisableReplyAnimations -bool true
-defaults write com.apple.mail DisableSendAnimations -bool true
 
 #############################
 
@@ -261,24 +198,24 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 ###############################################################################
 # SSD-specific tweaks                                                         #
 ###############################################################################
-echo ""
-echo "› SSD tweaks:"
-echo "  › Disable local backups"
+#echo ""
+#echo "› SSD tweaks:"
+#echo "  › Disable local backups"
 # https://classicyuppie.com/what-crap-is-this-os-xs-mobilebackups/
-sudo tmutil disablelocal
+#sudo tmutil disablelocal
 
-echo "  › Disable hibernation (speeds up entering sleep mode)"
-sudo pmset -a hibernatemode 0
+#echo "  › Disable hibernation (speeds up entering sleep mode)"
+#sudo pmset -a hibernatemode 0
 
-echo "  › Remove the sleep image file to save disk space"
-sudo rm /private/var/vm/sleepimage
-echo "  › Create a zero-byte file instead..."
-sudo touch /private/var/vm/sleepimage
-echo "  › ...and make sure it can’t be rewritten"
-sudo chflags uchg /private/var/vm/sleepimage
+#echo "  › Remove the sleep image file to save disk space"
+#sudo rm /private/var/vm/sleepimage
+#echo "  › Create a zero-byte file instead..."
+#sudo touch /private/var/vm/sleepimage
+#echo "  › ...and make sure it can’t be rewritten"
+#sudo chflags uchg /private/var/vm/sleepimage
 
-echo "  ›  Disable the sudden motion sensor as it’s not useful for SSDs"
-sudo pmset -a sms 0
+#echo "  ›  Disable the sudden motion sensor as it’s not useful for SSDs"
+#sudo pmset -a sms 0
 
 #############################
 
