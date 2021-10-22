@@ -8,7 +8,7 @@
 	"editor.tabSize": 4,
 	"editor.trimAutoWhitespace": true,
 	"editor.tabCompletion": "on",
-	"editor.fontFamily": "'CaskaydiaCove Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
+	"editor.fontFamily": "'FiraCode Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
 	"editor.smoothScrolling": true,
 	"editor.formatOnSave": true,
 	"editor.inlineSuggest.enabled": true,
@@ -29,7 +29,6 @@
 		"**/bower_components": true,
 		"/vendor": true
 	},
-	"workbench.startupEditor": "newUntitledFile",
 	"workbench.fontAliasing": "auto",
 	"workbench.editor.showIcons": true,
 	"explorer.confirmDragAndDrop": false,
@@ -87,7 +86,8 @@
 	"debug.console.fontSize": 16,
 	"diffEditor.codeLens": true,
 	"remote.SSH.remotePlatform": {
-		"darkstar.local": "linux"
+		"darkstar.local": "linux",
+		"thopter": "linux"
 	},
 	"remote.SSH.remoteServerListenOnSocket": true,
 	"workbench.editor.untitled.hint": "hidden",
@@ -109,7 +109,7 @@
 	},
 	"redhat.telemetry.enabled": false,
 	"yaml.format.enable": false,
-	"terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono'",
+	"terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono'",
 	"terminal.external.osxExec": "iTerm.app",
 	"terminal.integrated.fontSize": 16,
 	"terminal.integrated.cursorBlinking": true,
