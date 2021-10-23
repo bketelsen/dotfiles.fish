@@ -183,7 +183,7 @@ echo "  › Automatically hide and show the Dock"
 defaults write com.apple.dock autohide -bool true
 
 echo "  › Don't animate opening applications from the Dock"
-defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock launchanim -bool true
 
 #############################
 
