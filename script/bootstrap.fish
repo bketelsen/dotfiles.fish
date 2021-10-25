@@ -92,6 +92,8 @@ function install_dotfiles
 			or abort 'failed to link config file'
 	end
 
+	link_file $DOTFILES_ROOT/fish/config.fish $HOME/.config/fish/config.fish backup
+		or abort plugins
 	link_file $DOTFILES_ROOT/fisher/plugins $__fish_config_dir/fish_plugins backup
 		or abort plugins
 	link_file $DOTFILES_ROOT/bat/config $HOME/.config/bat/config backup
